@@ -6,7 +6,7 @@ const products = [
   {
     id: 1,
     title: 'Top 5 Succulents',
-    image: '/placeholder.svg?height=200&width=200',
+    image: '../../../public/Images/p1.jpg',
     originalPrice: 1545,
     price: 1099,
     reviews: 68,
@@ -16,7 +16,7 @@ const products = [
   {
     id: 2,
     title: 'Top 5 Desert Warrior Cacti',
-    image: '/placeholder.svg?height=200&width=200',
+    image: '../../../public/Images/p2.jpg',
     originalPrice: 1805,
     price: 1199,
     reviews: 109,
@@ -26,14 +26,64 @@ const products = [
   {
     id: 3,
     title: 'Dozen Sweet Succulents',
-    image: '/placeholder.svg?height=200&width=200',
+    image: '../../../public/Images/p3.jpg',
     originalPrice: 4098,
     price: 2599,
     reviews: 104,
     rating: 4,
     savePercentage: 36,
   },
-  // Add more products as needed
+  {
+    id: 4,
+    title: 'Dozen Sweet Succulents',
+    image: '../../../public/Images/p4.jpg',
+    originalPrice: 4098,
+    price: 2599,
+    reviews: 104,
+    rating: 4,
+    savePercentage: 36,
+  },
+  {
+    id: 5,
+    title: 'Dozen Sweet Succulents',
+    image: '../../../public/Images/p5.jpg',
+    originalPrice: 4098,
+    price: 2599,
+    reviews: 104,
+    rating: 4,
+    savePercentage: 36,
+  },
+  {
+    id: 6,
+    title: 'Dozen Sweet Succulents',
+    image: '../../../public/Images/p6.jpg',
+    originalPrice: 4098,
+    price: 2599,
+    reviews: 104,
+    rating: 4,
+    savePercentage: 34,
+  },
+  {
+    id: 7,
+    title: 'Dozen Sweet Succulents',
+    image: '../../../public/Images/p7.jpg',
+    originalPrice: 4098,
+    price: 2599,
+    reviews: 104,
+    rating: 4,
+    savePercentage: 37,
+  },
+  {
+    id: 8,
+    title: 'Dozen Sweet Succulents',
+    image: '../../../public/Images/p8.jpg',
+    originalPrice: 4098,
+    price: 2599,
+    reviews: 104,
+    rating: 4,
+    savePercentage: 46,
+  },
+    // Add more products as needed
 ];
 
 export default function ProductSlider() {
@@ -102,7 +152,7 @@ export default function ProductSlider() {
       <div className="slider-wrapper">
         {showLeftButton && (
           <button
-            className="nav-button left"
+            className="nav-button12 left"
             onClick={() => scroll('left')}
             aria-label="Scroll left"
           >
