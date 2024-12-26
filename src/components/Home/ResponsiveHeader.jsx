@@ -1,11 +1,7 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-// import '../styles/header.css';
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ResponsiveHeader() {
-  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigationItems = [
     {
@@ -62,19 +58,41 @@ function ResponsiveHeader() {
     <header className="header">
       <div className="container">
         <div className="top-header">
-          <button className="mobile-menu-button" onClick={() => setIsMobileMenuOpen(true)}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <button
+            className="mobile-menu-button"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <path d="M3 12h18M3 6h18M3 18h18"></path>
             </svg>
           </button>
-          <Link href="/" className="logo">
-            <span className="logo-green">nursery</span>live
+          <Link to="/" className="logo">
+            <span className="logo-green">nursery</span>
           </Link>
+
           <div className="search-bar">
             <form className="search-form">
-              <input type="text" className="search-input" placeholder="What are you looking for?" />
+              <input
+                type="text"
+                className="search-input"
+                placeholder="What are you looking for?"
+              />
               <button type="submit" className="search-button">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
@@ -86,7 +104,14 @@ function ResponsiveHeader() {
             <div className="support-subtext">Available 24/7</div>
           </div>
           <button className="cart-button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <circle cx="9" cy="21" r="1"></circle>
               <circle cx="20" cy="21" r="1"></circle>
               <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -95,9 +120,20 @@ function ResponsiveHeader() {
         </div>
         <div className="mobile-search">
           <form className="search-form">
-            <input type="text" className="search-input" placeholder="What are you looking for?" />
+            <input
+              type="text"
+              className="search-input"
+              placeholder="What are you looking for?"
+            />
             <button type="submit" className="search-button">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
@@ -112,17 +148,24 @@ function ResponsiveHeader() {
               <li key={item.href} className="nav-item">
                 <button className="nav-button">
                   {item.title}
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <polyline points="6 9 12 15 18 9"></polyline>
                   </svg>
                 </button>
                 {item.subCategories && (
                   <div className="dropdown">
-                    {item.subCategories.map((subCategory) => (
+                    {item.subCategories.map((subCategory) => {
                       <Link key={subCategory.href} href={subCategory.href}>
                         {subCategory.title}
-                      </Link>
-                    ))}
+                      </Link>;
+                    })}
                   </div>
                 )}
               </li>
@@ -132,8 +175,18 @@ function ResponsiveHeader() {
       </nav>
       {isMobileMenuOpen && (
         <div className="mobile-menu active">
-          <button className="mobile-menu-close" onClick={() => setIsMobileMenuOpen(false)}>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <button
+            className="mobile-menu-close"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
@@ -161,5 +214,4 @@ function ResponsiveHeader() {
     </header>
   );
 }
-export default ResponsiveHeader
-
+export default ResponsiveHeader;

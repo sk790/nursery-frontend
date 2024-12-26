@@ -8,11 +8,11 @@ import TopNavbar from "./Home/TopNavbar";
 function Home() {
   return (
     <div>
-      <TopNavbar/>
+      <TopNavbar />
       <Header />
-      <SortList/>
-      <ResponsiveHeader/>
-      </div>
+      <SortList />
+      <ResponsiveHeader />
+    </div>
   );
 }
 
