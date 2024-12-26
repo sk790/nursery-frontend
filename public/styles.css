@@ -423,15 +423,15 @@ footer.atc-banner--cart-footer a.button-secondary.atc-button--viewcart {
 
 
 
-
+/*responsiveHeader*/
 
 
 
   
   .container {
-    max-width: 1200px;
+    /* max-width:100%; */
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 25px;
   }
   
   .top-header {
@@ -442,19 +442,34 @@ footer.atc-banner--cart-footer a.button-secondary.atc-button--viewcart {
   }
   
   .logo {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
     text-decoration: none;
     color: #000;
   }
-  
+  .icons1{
+    display: flex;
+  }
+.login-link{
+  display: flex;
+}
+.login-text{
+  margin-top: 2px;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
   .logo-green {
     color: #22c55e;
+  }
+   .logo-black {
+    color: #000000;
   }
   
   .search-bar {
     flex-grow: 1;
-    max-width: 500px;
+    max-width: 940px;
     margin: 0 20px;
   }
   
@@ -482,6 +497,24 @@ footer.atc-banner--cart-footer a.button-secondary.atc-button--viewcart {
   .expert-support {
     text-align: right;
   }
+  .expert-support-mobile {
+    display: flex;
+    text-align: center;
+    margin: 4px;
+    gap: 10px;
+  }
+  .support24icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    border-bottom:1px solid #e0e0e0 ;
+
+  }
+  .icon-chat{
+    width: 19px;
+  }
   
   .support-text {
     font-size: 14px;
@@ -500,7 +533,7 @@ footer.atc-banner--cart-footer a.button-secondary.atc-button--viewcart {
   }
   
   .bottom-nav {
-    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
   }
   
   .nav-list {
@@ -544,22 +577,41 @@ footer.atc-banner--cart-footer a.button-secondary.atc-button--viewcart {
     text-decoration: none;
     color: #000;
   }
-  
+  .mobile-24support{
+    display: none;
+  }
   .mobile-menu-button,
   .mobile-search {
     display: none;
   }
-  
+  @media (max-width: 980px) {
+    .expert-support,
+    .bottom-nav ,
+    .login-link,
+    .icons1{
+      display: none;
+    }
+  }
   @media (max-width: 768px) {
+
     .search-bar,
     .expert-support,
-    .bottom-nav {
+    .bottom-nav ,
+    .login-link,
+  
+    .icons1{
       display: none;
+    }
+    .sortlist-item {
+      width: 70px;
     }
   
     .mobile-menu-button,
-    .mobile-search {
+    .mobile-search,
+    .mobile-24support{
       display: block;
+      /* align-items: center;
+      justify-content: center; */
     }
   
     .mobile-search {
