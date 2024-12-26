@@ -3,7 +3,7 @@
 import AppDownload from "./Home/AppDownload";
 import BannerSlider from "./Home/BannerSlider";
 import ProductList from "./Home/ProductList";
-// import ProductSlider from "./Home/ProductSlider";
+import ProductSlider from "./Home/ProductSlider";
 import ResponsiveHeader from "./Home/ResponsiveHeader";
 import Services from "./Home/Services";
 import SortList from "./Home/SortList";
@@ -20,8 +20,8 @@ function Home() {
       <BannerSlider />
       <AppDownload/>
       <Services/>
-      {/* <ProductSlider/> */}
-      <ProductList/>
+      <ProductSlider/>
+      {/* <ProductList/> */}
     </div>
   );
 }

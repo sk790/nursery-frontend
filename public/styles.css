@@ -458,6 +458,7 @@ footer.atc-banner--cart-footer a.button-secondary.atc-button--viewcart {
   font-family: Cabin, sans-serif;
   font-style: normal;
   font-weight: 600;
+  cursor:pointer;
 }
 
   .logo-green {
