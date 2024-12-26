@@ -2,7 +2,8 @@
 // import Header from "./Home/Header";
 import AppDownload from "./Home/AppDownload";
 import BannerSlider from "./Home/BannerSlider";
-import ProductList from "./Home/ProductList";
+
+// import ProductList from "./Home/ProductList";
 import ProductSlider from "./Home/ProductSlider";
 import ResponsiveHeader from "./Home/ResponsiveHeader";
 import Services from "./Home/Services";
@@ -26,4 +27,8 @@ function Home() {
   );
 }
 
+
+
 export default Home;
+
+
