@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginPopup from "../LoginPopup";
+import GardeningSidebar from "./GardeningSidebar";
 
 function ResponsiveHeader() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
@@ -288,11 +289,14 @@ function ResponsiveHeader() {
                   </button>
                   {item.subCategories && (
                     <div className="dropdown">
-                      {item.subCategories.map((subCategory) => {
-                        <Link key={subCategory.href} href={subCategory.href}>
+                      {item.subCategories.map((subCategory) => (
+                        <Link
+                          key={subCategory.href}
+                          href={subCategory.href}
+                        >
                           {subCategory.title}
-                        </Link>;
-                      })}
+                        </Link>
+                      ))}
                     </div>
                   )}
                 </li>
@@ -302,7 +306,7 @@ function ResponsiveHeader() {
         </nav>
         {isMobileMenuOpen && (
           <div className="mobile-menu active">
-            <button
+            {/* <button
               className="mobile-menu-close"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -317,8 +321,8 @@ function ResponsiveHeader() {
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
-            </button>
-            <nav>
+            </button> */}
+            {/* <nav>
               {navigationItems.map((item) => (
                 <div key={item.href} className="mobile-nav-item">
                   <Link href={item.href} className="mobile-nav-link">
@@ -335,7 +339,14 @@ function ResponsiveHeader() {
                   )}
                 </div>
               ))}
-            </nav>
+            </nav> */}
+        <GardeningSidebar 
+        isMobileMenuOpen={isMobileMenuOpen} 
+        isLoginPopupOpen={isLoginPopupOpen}
+        toggleLoginPopup={toggleLoginPopup}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+        setIsLoginPopupOpen={setIsLoginPopupOpen}
+        />
           </div>
         )}
       </header>

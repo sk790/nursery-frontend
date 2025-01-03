@@ -1,6 +1,6 @@
 // import { Search, ShoppingCart, User } from 'lucide-react'
 import "../../../public/styles.css";
-import "../../../public/style1.css";
+// import "../../../public/style1.css";
 export default function TopNavbar() {
   return (
     <header className="navheader">

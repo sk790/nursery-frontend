@@ -120,9 +120,6 @@
     background: rgb(59, 26, 26);
   }
   
-
-
-
   /* App download section */
 
   .appdownload-container {
@@ -193,9 +190,21 @@ margin-bottom: 30px;
     justify-content: center;
     outline: none;
 }
+.highlights-banner__icon {
+  flex: 1 0 auto;
+  width: auto;
+  max-width: 35%;
+  /* height: 2.45rem; */
+  margin-right: 20px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
 .highlights-banner__template--16940560121996__1635435244f767b4a1 .highlights-banner__block {
     color: #4d4d4d;
 }
+
 @media screen and (min-width: 860px) {
     .highlight-banner__count-4 .highlights-banner__block {
         width: 25%;
@@ -235,20 +244,10 @@ margin-bottom: 30px;
 }
 @media screen and (min-width: 680px) {
     .highlights-banner__icon {
-        height: 2.5rem;
+        margin: 10px;
     }
 }
-.highlights-banner__icon {
-    flex: 1 0 auto;
-    width: auto;
-    max-width: 35%;
-    /* height: 2.25rem; */
-    margin-right: 20px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
+
 .highlights-banner__block.highlights-banner__align-center .highlights-banner__text {
     padding-right: 0;
     text-align: center;

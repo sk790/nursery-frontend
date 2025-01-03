@@ -176,3 +176,12 @@
     height: 32px;
   }
 }
+
+.productitem--image-alternate{
+  position: absolute;
+  top:0;
+  opacity: 0;
+}
+.productitem--image-alternate:hover {
+  opacity:1;
+}

@@ -1,89 +1,99 @@
-import { useRef, useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import './ProductSlider.css';
+import { useRef, useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "./ProductSlider.css";
 
 const products = [
   {
     id: 1,
-    title: 'Top 5 Succulents',
-    image: '../../../public/Images/p1.jpg',
+    title: "Top 5 Succulents",
+    image: "../../../public/Images/p1.jpg",
+    alternateImage: "../../../public/Images/p2.jpg",
     originalPrice: 1545,
     price: 1099,
     reviews: 68,
     rating: 4,
     savePercentage: 29,
+    offers: "⚡ 4+ Offers Inside",
   },
   {
     id: 2,
-    title: 'Top 5 Desert Warrior Cacti',
-    image: '../../../public/Images/p2.jpg',
+    title: "Top 5 Desert Warrior Cacti",
+    image: "../../../public/Images/p2.jpg",
+    alternateImage: "../../../public/Images/p1.jpg",
     originalPrice: 1805,
     price: 1199,
     reviews: 109,
     rating: 4,
     savePercentage: 34,
+    offers: "⚡ 4+ Offers Inside",
   },
   {
     id: 3,
-    title: 'Dozen Sweet Succulents',
-    image: '../../../public/Images/p3.jpg',
+    title: "Dozen Sweet Succulents",
+    image: "../../../public/Images/p3.jpg",
     originalPrice: 4098,
     price: 2599,
     reviews: 104,
     rating: 4,
     savePercentage: 36,
+    offers: "⚡ 4+ Offers Inside",
   },
   {
     id: 4,
-    title: 'Dozen Sweet Succulents',
-    image: '../../../public/Images/p4.jpg',
+    title: "Dozen Sweet Succulents",
+    image: "../../../public/Images/p4.jpg",
     originalPrice: 4098,
     price: 2599,
     reviews: 104,
     rating: 4,
     savePercentage: 36,
+    offers: "⚡ 4+ Offers Inside",
   },
   {
     id: 5,
-    title: 'Dozen Sweet Succulents',
-    image: '../../../public/Images/p5.jpg',
+    title: "Dozen Sweet Succulents",
+    image: "../../../public/Images/p5.jpg",
     originalPrice: 4098,
     price: 2599,
     reviews: 104,
     rating: 4,
     savePercentage: 36,
+    offers: "⚡ 4+ Offers Inside",
   },
   {
     id: 6,
-    title: 'Dozen Sweet Succulents',
-    image: '../../../public/Images/p6.jpg',
+    title: "Dozen Sweet Succulents",
+    image: "../../../public/Images/p6.jpg",
     originalPrice: 4098,
     price: 2599,
     reviews: 104,
     rating: 4,
     savePercentage: 34,
+    offers: "⚡ 4+ Offers Inside",
   },
   {
     id: 7,
-    title: 'Dozen Sweet Succulents',
-    image: '../../../public/Images/p7.jpg',
+    title: "Dozen Sweet Succulents",
+    image: "../../../public/Images/p7.jpg",
     originalPrice: 4098,
     price: 2599,
     reviews: 104,
     rating: 4,
     savePercentage: 37,
+    offers: "⚡ 4+ Offers Inside",
   },
   {
     id: 8,
-    title: 'Dozen Sweet Succulents',
-    image: '../../../public/Images/p8.jpg',
+    title: "Dozen Sweet Succulents",
+    image: "../../../public/Images/p8.jpg",
     originalPrice: 4098,
     price: 2599,
     reviews: 104,
     rating: 4,
     savePercentage: 46,
+    offers: "⚡ 4+ Offers Inside",
   },
-    // Add more products as needed
+  // Add more products as needed
 ];
 
 export default function ProductSlider() {
@@ -104,21 +114,21 @@ export default function ProductSlider() {
 
   useEffect(() => {
     checkScrollButtons();
-    window.addEventListener('resize', checkScrollButtons);
-    return () => window.removeEventListener('resize', checkScrollButtons);
+    window.addEventListener("resize", checkScrollButtons);
+    return () => window.removeEventListener("resize", checkScrollButtons);
   }, []);
 
   const scroll = (direction) => {
     if (containerRef.current) {
       const scrollAmount = 300;
       const newScrollLeft =
-        direction === 'left'
+        direction === "left"
           ? containerRef.current.scrollLeft - scrollAmount
           : containerRef.current.scrollLeft + scrollAmount;
 
       containerRef.current.scrollTo({
         left: newScrollLeft,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
@@ -153,7 +163,7 @@ export default function ProductSlider() {
         {showLeftButton && (
           <button
             className="nav-button12 left"
-            onClick={() => scroll('left')}
+            onClick={() => scroll("left")}
             aria-label="Scroll left"
           >
             <ChevronLeft />
@@ -172,13 +182,36 @@ export default function ProductSlider() {
           {products.map((product) => (
             <div key={product.id} className="product-card">
               <div className="image-container12">
-                <img src={product.image} alt={product.title} />
+                {/* show altranet img on hover */}
+                {/* <img src={product.image} alt={product.title} /> */}
+                <div className="productitem--image-container">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    // {product.alternateImage}={product.image}
+                    
+                    // className="productitem--image-primary"
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.src = product.alternateImage)
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.src = product.image)
+                    }
+                  />
+                  {/* <img
+                    src={product.alternateImage}
+                    alt={product.title}
+                    className="productitem--image-alternate"
+                  /> */}
+                </div>
                 <span className="save-tag">Save {product.savePercentage}%</span>
               </div>
 
               <div className="product-info">
                 <div className="price-container">
-                  <span className="original-price">₹{product.originalPrice}</span>
+                  <span className="original-price">
+                    ₹{product.originalPrice}
+                  </span>
                   <span className="price">₹{product.price}</span>
                 </div>
 
@@ -188,7 +221,9 @@ export default function ProductSlider() {
                   {[...Array(5)].map((_, index) => (
                     <span
                       key={index}
-                      className={`star ${index < product.rating ? 'filled' : ''}`}
+                      className={`star ${
+                        index < product.rating ? "filled" : ""
+                      }`}
                     >
                       ★
                     </span>
@@ -197,7 +232,7 @@ export default function ProductSlider() {
                 </div>
 
                 <div className="offers">
-                  <span className="offers-tag">⚡ 4+ Offers Inside</span>
+                  <span className="offers-tag">{product.offers}</span>
                 </div>
 
                 <button className="add-to-cart">Add to cart</button>
@@ -209,7 +244,7 @@ export default function ProductSlider() {
         {showRightButton && (
           <button
             className="nav-button12 right"
-            onClick={() => scroll('right')}
+            onClick={() => scroll("right")}
             aria-label="Scroll right"
           >
             <ChevronRight />

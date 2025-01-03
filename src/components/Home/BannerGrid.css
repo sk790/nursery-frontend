@@ -1,0 +1,169 @@
+.button-shop {
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 10px;
+  font-size: 1rem;
+}
+.banner-title{
+  text-align: center;
+  font-family: Cabin, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: none;
+  font-size: var(--font-size-section-heading);
+  letter-spacing: 0em;
+}
+.banner-section {
+  display: flex;
+  width: 100%;
+  /* padding: 20px; */
+  padding: 0 50px 0 50px;
+  max-height: auto;
+}
+
+.left-section {
+  width: 65%; /* Maintain 65% width for the left section */
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; Add spacing between the images */
+}
+
+.right-section {
+  width: 35%; /* Maintain 35% width for the right section */
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; Add spacing between the images */
+}
+
+.banner-left {
+  height: calc(50% - 10px); /* Two images equally distributed, accounting for gap */
+  position: relative;
+  padding: 10px;
+}
+
+.banner-right {
+  height: calc((100% - 20px) / 3); /* Three images equally distributed, accounting for gap */
+  position: relative;
+  padding: 10px;
+}
+.banner-left1 {
+  height: calc(50% - 10px); /* Two images equally distributed, accounting for gap */
+  position: relative;
+  padding: 10px;
+}
+
+.banner-right1 {
+  height: calc((50% - 10px) ); /* Three images equally distributed, accounting for gap */
+  position: relative;
+  padding: 10px;
+}
+
+.banner-section img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-text {
+  position: absolute;
+  max-width: 80%;
+  top: 20px;
+  left: 20px;
+}
+
+.tital-image {
+  font-size: 1.625rem;
+  font-family: Cabin, sans-serif;
+  font-weight: 600;
+  margin: 10px;
+  min-width: 70%;
+}
+
+.discription-image {
+  margin: 10px;
+  font-size: 1.25rem;
+  min-width: 70%;
+}
+
+@media screen and (max-width: 968px) {
+.tital-image {
+  font-size: 1.29rem; /* Adjust font size for smaller screens */
+}
+
+.discription-image {
+  font-size: 1rem; /* Adjust description font size */
+}
+
+.button-shop {
+  font-size: 0.9rem; /* Adjust button font size */
+  margin: 5px auto;
+  /* display: block; */
+  /* width: fit-content; */
+}
+}
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .banner-section {
+    flex-direction: column; /* Stack sections vertically on smaller screens */
+    padding: 10px;
+    padding: 0 30px 0 30px;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height dynamically */
+  }
+
+  .banner-left,
+  .banner-right {
+    height: 300px; /* Allow height to fit content */
+  }
+
+  .banner-text {
+    /* position: static; */
+    max-width: 80%; /* Full width for text */
+    /* text-align: center; */
+  }
+
+  .tital-image {
+    font-size: 1.25rem; /* Adjust font size for smaller screens */
+  }
+
+  .discription-image {
+    font-size: 1rem; /* Adjust description font size */
+  }
+
+  .button-shop {
+    font-size: 0.9rem; /* Adjust button font size */
+    margin: 5px auto;
+    /* display: block; */
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tital-image {
+    font-size: 1rem; /* Further reduce font size for very small screens */
+  }
+
+  .discription-image {
+    font-size: 0.8rem; /* Further reduce description font size */
+  }
+
+  .banner-section{
+    padding: 0 10px 0 10px;
+  }
+  .button-shop {
+    font-size: 0.8rem; /* Smaller button font size */
+  }
+  .banner-left,
+  .banner-right {
+    height: 200px; /* Allow height to fit content */
+  }
+}
